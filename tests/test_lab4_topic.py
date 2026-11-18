@@ -29,7 +29,7 @@ def test_create_topic_success(application, user, forum):
     
     topic = Topic.query.filter_by(title="Тестовая тема").first()
     assert topic is not None
-    assert topic.forum_id == 999
+    assert topic.forum_id == forum.id
 
 
 def test_create_topic_validation_error(application, user, forum):
